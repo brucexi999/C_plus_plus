@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string.h>
 
 using namespace std; // I am only using the std lib, so this line brings no problem. 
 
@@ -30,12 +31,28 @@ class Orcs {
         int wisdom_skill = 1; 
 }; 
 
+class Cities {
+    public:
+        string founder;
+        int age; 
+        Cities (string a_founder, int a_age) {
+            founder = a_founder; 
+            age = a_age; 
+        }
+};
+
 int main (void) {
     Elfs Luthien, Arwen; 
     Men Beren, Aragorn; 
     Dwarves Durin; 
 
+    Cities Minas_Tirith ("Elendil", 2); 
+    Cities Gondolin ("Turgon", 1);
+
     cout << Luthien.beauty << endl; 
     cout << Beren.life_span << endl;
+
+    cout << Gondolin.founder << endl;
+    cout << Minas_Tirith.age << endl;
     return 0; 
 }
