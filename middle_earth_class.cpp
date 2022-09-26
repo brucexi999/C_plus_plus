@@ -3,11 +3,22 @@
 
 using namespace std; // I am only using the std lib, so this line brings no problem. 
 
-class Elfs {
+class Elves {
     public: 
         int life_span = 999999999;
         int beauty = 10;
         int wisdom_skill = 10;
+        string birth_place; 
+        Elves (string abirth_place) {
+            birth_place = abirth_place; 
+        }
+        bool isCalaquendi (void) {
+            if (birth_place == "Valinor") {
+                return true;
+            } else {
+                return false; 
+            }
+        }
 }; 
 
 class Men {
@@ -35,21 +46,22 @@ class Cities {
     public:
         string founder;
         int age; 
-        Cities (string a_founder, int a_age) {
-            founder = a_founder; 
-            age = a_age; 
+        Cities (string afounder, int aage) {
+            founder = afounder; 
+            age = aage; 
         }
 };
 
 int main (void) {
-    Elfs Luthien, Arwen; 
+    Elves Luthien ("Valinor"), Arwen ("Middle-earth"); 
     Men Beren, Aragorn; 
     Dwarves Durin; 
 
     Cities Minas_Tirith ("Elendil", 2); 
     Cities Gondolin ("Turgon", 1);
 
-    cout << Luthien.beauty << endl; 
+    cout << Luthien.isCalaquendi() << endl;
+    cout << Arwen.isCalaquendi() << endl; 
     cout << Beren.life_span << endl;
 
     cout << Gondolin.founder << endl;
